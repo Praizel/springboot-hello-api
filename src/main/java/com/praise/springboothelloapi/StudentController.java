@@ -1,6 +1,5 @@
 package com.praise.springboothelloapi;
 
-import com.praise.springboothelloapi.Student;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,5 +14,11 @@ public class StudentController {
         "<br>Course: " + student.getCourse();
     }
 
-}
+    @GetMapping("/student-json")
+    public Student studentJson(){
+        Student student = new Student(1, "Ally", "Software Engineer");
 
+        return  student;
+    }
+
+}
